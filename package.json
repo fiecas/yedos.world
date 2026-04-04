@@ -1,8 +1,6 @@
 {
   "name": "yedos.world",
-  "module": "index.ts",
   "type": "module",
-  "private": true,
   "devDependencies": {
     "@types/bun": "latest"
   },
