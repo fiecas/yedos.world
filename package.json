@@ -1,6 +1,9 @@
 {
   "name": "yedos.world",
   "type": "module",
+  "scripts": {
+    "build": "bun build ./apps/web/routes/*.html --minify --outdir=dist"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
