@@ -4,6 +4,9 @@
   "scripts": {
     "build": "bun build ./apps/web/routes/*.html --minify --outdir=dist"
   },
+  "dependencies": {
+    "prisma": "^7.6.0"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
@@ -12,8 +15,5 @@
   },
   "engines": {
     "node": "20.x"
-  },
-  "dependencies": {
-    "prisma": "^7.6.0"
   }
 }
