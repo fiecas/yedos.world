@@ -7,6 +7,8 @@ services:
         build:
             context: .
             target: server
+        networks:
+            - dokploy-network
         depends_on:
             - migrator
         expose:
