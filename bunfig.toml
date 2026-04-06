@@ -1,0 +1,3 @@
+[serve.static]
+# Tillåter att variabler som börjar med PUBLIC_ skickas till klienten
+env = "PUBLIC_*"
