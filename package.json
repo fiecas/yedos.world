@@ -12,5 +12,8 @@
   },
   "engines": {
     "node": "20.x"
+  },
+  "dependencies": {
+    "prisma": "^7.6.0"
   }
 }
