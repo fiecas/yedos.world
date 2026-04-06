@@ -1,5 +1,5 @@
 :root {
-    --color-primary: #ffac05;
+    --color-primary: #e2f065;
 }
 
 body {
@@ -9,10 +9,11 @@ body {
 }
 
 main {
-    color: #140d00;
-    background-color: #fff6e5;
+    color: var(--color-primary);
+    background-image: url(./assets/108797.webp);
+    background-size: cover;
 
-    width: 35rem;
+    width: 720px;
+    height: 481px;
     margin: 3rem auto;
-    padding: 0.5rem 2rem;
 }
