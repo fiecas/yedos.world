@@ -28,6 +28,9 @@ RUN bunx prisma generate
 RUN bun run build:server
 RUN bun run build:web 
 
+FROM prerelease AS migrator
+ENTRYPOINT [ "bunx", "prisma", "migrate", "deploy" ]
+
 # copy production dependencies and source code into final image
 FROM base AS server
 COPY --from=prerelease /usr/src/app/dist/server .

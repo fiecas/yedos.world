@@ -1,13 +1,19 @@
 services:
+    migrator:
+        build:
+            context: .
+            target: migrator
+    server:
+        build:
+            context: .
+            target: server
+        depends_on:
+            - migrator
+        expose:
+            - "3001"
     web:
         build:
             context: .
             target: web
         expose:
             - "80"
-    server:
-        build:
-            context: .
-            target: server
-        expose:
-            - "3001"
