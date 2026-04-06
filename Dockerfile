@@ -24,6 +24,7 @@ COPY . .
 # [optional] tests & build
 ENV NODE_ENV=production
 # RUN bun test
+RUN bunx prisma generate
 RUN bun run build:server
 RUN bun run build:web --define WS_URL=$WS_URL
 
