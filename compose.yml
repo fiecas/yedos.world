@@ -3,6 +3,8 @@ services:
         build:
             context: .
             target: migrator
+        networks:
+            - dokploy-network
     server:
         build:
             context: .
