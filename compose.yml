@@ -1,0 +1,13 @@
+services:
+    web:
+        build:
+            context: .
+            target: web
+        expose:
+            - "80"
+    server:
+        build:
+            context: .
+            target: server
+        expose:
+            - "3001"

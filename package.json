@@ -1,8 +1,10 @@
 {
   "name": "yedos.world",
   "type": "module",
+
   "scripts": {
-    "build": "bun build ./apps/web/routes/*.html --minify --outdir=dist"
+    "build:server":"bun build ./apps/server/main.ts --target=bun --outdir=dist/server",
+    "build:web": "bun build ./apps/web/routes/*.html --minify --outdir=dist/web"
   },
   "dependencies": {
     "@orpc/client": "^1.13.13",
