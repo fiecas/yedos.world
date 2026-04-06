@@ -1,8 +1,20 @@
 {
   "name": "yedos.world",
   "type": "module",
+
   "scripts": {
-    "build": "bun build ./apps/web/routes/*.html --minify --outdir=dist"
+    "build:server":"bun build ./apps/server/main.ts --target=bun --outdir=dist/server",
+    "build:web": "bun build --env=PUBLIC_* ./apps/web/routes/*.html --outdir=dist/web"
+  },
+  "dependencies": {
+    "@orpc/client": "^1.13.13",
+    "@orpc/server": "^1.13.13",
+    "@prisma/adapter-pg": "^7.6.0",
+    "@prisma/client": "^7.6.0",
+    "@prisma/server": "^0.0.0",
+    "partysocket": "^1.1.16",
+    "prisma": "^7.6.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/bun": "latest"
