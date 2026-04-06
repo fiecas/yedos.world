@@ -5,7 +5,14 @@
     "build": "bun build ./apps/web/routes/*.html --minify --outdir=dist"
   },
   "dependencies": {
-    "prisma": "^7.6.0"
+    "@orpc/client": "^1.13.13",
+    "@orpc/server": "^1.13.13",
+    "@prisma/adapter-pg": "^7.6.0",
+    "@prisma/client": "^7.6.0",
+    "@prisma/server": "^0.0.0",
+    "partysocket": "^1.1.16",
+    "prisma": "^7.6.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/bun": "latest"
