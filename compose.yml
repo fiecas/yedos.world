@@ -17,3 +17,7 @@ services:
             target: web
         expose:
             - "80"
+
+networks:
+    dokploy-network:
+        external: true
