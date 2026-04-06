@@ -4,7 +4,7 @@
 
   "scripts": {
     "start:server": "bun ./apps/server/main.ts --target=bun",
-    "start:web":"bun ./apps/web/routes/index.html",
+    "start:web":"bun ./apps/web/routes/*.html",
     "build:server":"bun build ./apps/server/main.ts --target=bun --outdir=dist/server",
     "build:web": "bun build --env=PUBLIC_* ./apps/web/routes/*.html --outdir=dist/web"
   },
