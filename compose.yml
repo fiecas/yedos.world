@@ -1,0 +1,29 @@
+services:
+    migrator:
+        build:
+            context: .
+            target: migrator
+        networks:
+            - dokploy-network
+    server:
+        build:
+            context: .
+            target: server
+        environment:
+            - DATABASE_URL=${DATABASE_URL}
+        networks:
+            - dokploy-network
+        depends_on:
+            - migrator
+        expose:
+            - "3001"
+    web:
+        build:
+            context: .
+            target: web
+        expose:
+            - "80"
+
+networks:
+    dokploy-network:
+        external: true

@@ -1,0 +1,9 @@
+model Post {
+    id String @id @default(uuid())
+    slug String
+    title String
+    body String
+
+    published DateTime @default(now())
+    updated DateTime?
+}
