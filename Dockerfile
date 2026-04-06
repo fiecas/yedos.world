@@ -26,7 +26,7 @@ ENV NODE_ENV=production
 # RUN bun test
 RUN bunx prisma generate
 RUN bun run build:server
-RUN bun run build:web --define WS_URL=$WS_URL
+RUN bun run build:web 
 
 # copy production dependencies and source code into final image
 FROM base AS server
