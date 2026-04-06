@@ -4,7 +4,7 @@
 
   "scripts": {
     "build:server":"bun build ./apps/server/main.ts --target=bun --outdir=dist/server",
-    "build:web": "bun build ./apps/web/routes/*.html --define WS_URL=$WS_URL --minify --outdir=dist/web"
+    "build:web": "bun build --env=PUBLIC_* ./apps/web/routes/*.html --outdir=dist/web"
   },
   "dependencies": {
     "@orpc/client": "^1.13.13",

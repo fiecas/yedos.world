@@ -4,7 +4,7 @@ import type { RouterClient } from "@orpc/server";
 import { WebSocket as WS } from "partysocket";
 import type { router } from "../../server/router";
 
-const websocket = new WS(process.env.WS_URL ?? "");
+const websocket = new WS(process.env.PUBLIC_WS_URL ?? "");
 
 const link = new RPCLink({ websocket: websocket as any as WebSocket });
 
