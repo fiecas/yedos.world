@@ -3,16 +3,57 @@
 }
 
 body {
+    margin: 0;
+}
+
+h1 {
     font-family: "Courier New", Courier, monospace;
-    background-image: url(./assets/wood.webp);
-    background-size: 20rem;
+}
+
+#wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+}
+
+#background {
+    z-index: -1;
+    position: absolute;
+    top: -35;
+    bottom: 0;
+    left: -50px;
+    right: -150px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #003d0b;
+}
+
+#background .box {
+    display: flex;
+    flex-wrap: wrap;
+    border-color: #ffac05;
+    border-style: solid;
+    border-width: 0.1px;
+}
+
+#background .box.big {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-color: #ffac05;
+    border-style: solid;
+    border-width: 0.5px;
+    height: fit-content;
 }
 
 main {
-    color: #140d00;
-    background-color: #fff6e5;
+    text-align: center;
+    color: #ffac05;
+    background-color: #003d0b;
 
-    width: 35rem;
-    margin: 3rem auto;
+    width: 45rem;
     padding: 0.5rem 2rem;
 }
