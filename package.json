@@ -1,12 +1,11 @@
 {
   "name": "yedos.world",
   "type": "module",
-
   "scripts": {
     "start:server": "bun ./apps/server/main.ts --target=bun",
-    "start:web":"bun ./apps/web/routes/index.html",
-    "build:server":"bun build ./apps/server/main.ts --target=bun --outdir=dist/server",
-    "build:web": "bun build --env=PUBLIC_* ./apps/web/routes/*.html --outdir=dist/web"
+    "start:web": "bun ./apps/web/scripts/dev.ts",
+    "build:server": "bun build ./apps/server/main.ts --target=bun --outdir=dist/server",
+    "build:web": "bun ./apps/web/scripts/build.ts"
   },
   "dependencies": {
     "@orpc/client": "^1.13.13",
@@ -16,13 +15,16 @@
     "@prisma/server": "^0.0.0",
     "partysocket": "^1.1.16",
     "prisma": "^7.6.0",
+    "svelte": "^5.55.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@types/bun": "latest",
+    "vite": "^8.0.5"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^6.0.2"
   },
   "engines": {
     "node": "20.x"
