@@ -30,7 +30,7 @@
 		"prettier-plugin-tailwindcss": "^0.7.2",
 		"prisma": "^7.7.0",
 		"svelte": "^5.55.2",
-		"svelte-adapter-bun": "^1.0.1",
+		"@sveltejs/adapter-node": "^5.2.11",
 		"svelte-check": "^4.4.6",
 		"tailwindcss": "^4.2.2",
 		"tsx": "^4.21.0",
