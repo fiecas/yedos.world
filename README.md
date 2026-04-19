@@ -1,1 +1,0 @@
-# yedos.world
