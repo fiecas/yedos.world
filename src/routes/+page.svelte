@@ -19,3 +19,10 @@
 {:else}
 	no blog posts yet.
 {/if}
+
+<h2>me:</h2>
+<ul>
+	<li><a rel="me" href="https://github.com/youknowedo">github</a></li>
+	<li><a rel="me" href="https://www.instagram.com/sigfridwade/">instagram</a></li>
+	<li><a rel="me" href="mailto:sigfrid@fiecas.com">email</a></li>
+</ul>
