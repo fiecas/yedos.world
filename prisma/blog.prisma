@@ -1,0 +1,8 @@
+model Post {
+  id        String    @id
+  slug      String
+  title     String
+  body      String
+  published DateTime  @default(now())
+  updated   DateTime?
+}
