@@ -1,0 +1,7 @@
+model User {
+    id          String       @id @default(cuid())
+    profileUrl  String       @unique
+    credentials Credential[]
+    sessions    Session[]
+    createdAt   DateTime     @default(now())
+}
