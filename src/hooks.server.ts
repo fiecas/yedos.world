@@ -1,4 +1,4 @@
-import { SESSION_COOKIE_NAME } from '$lib/constants';
+import { SESSION_COOKIE_NAME, SESSION_COOKIE_OPTIONS } from '$lib/constants';
 import { prisma } from '$lib/prisma';
 import type { Handle } from '@sveltejs/kit';
 
@@ -44,6 +44,10 @@ export const handle: Handle = async ({ event, resolve }) => {
 		session: { id: sessionId, expiresAt },
 		user: session.user
 	};
+	event.cookies.set(SESSION_COOKIE_NAME, sessionId, {
+		...SESSION_COOKIE_OPTIONS,
+		expires: expiresAt
+	});
 
 	return response;
 };
