@@ -3,6 +3,7 @@ import { prisma } from '$lib/prisma';
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
+	const now = new Date();
 	const response = await resolve(event);
 
 	const sessionId = event.cookies.get(SESSION_COOKIE_NAME);
@@ -11,7 +12,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		return response;
 	}
 
-	const sessionWithUser = await prisma.session.findFirst({
+	const session = await prisma.session.findFirst({
 		where: { id: sessionId },
 		select: {
 			id: true,
@@ -24,15 +25,24 @@ export const handle: Handle = async ({ event, resolve }) => {
 			}
 		}
 	});
-	if (!sessionWithUser || sessionWithUser.expiresAt.valueOf() > Date.now().valueOf()) {
+	if (!session || session.expiresAt.valueOf() > Date.now()) {
 		event.locals.auth = null;
 		return response;
 	}
 
-	const { user, ...session } = sessionWithUser;
+	const expiresAt = new Date();
+	expiresAt.setDate(now.getDate() + 30);
+	await prisma.session.update({
+		where: {
+			id: sessionId
+		},
+		data: {
+			expiresAt
+		}
+	});
 	event.locals.auth = {
-		session,
-		user
+		session: { id: sessionId, expiresAt },
+		user: session.user
 	};
 
 	return response;
